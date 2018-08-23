@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {TableHeaderColumn, BootstrapTable} from 'react-bootstrap-table';
+import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
 
 class Order extends Component {
@@ -56,7 +57,6 @@ class Order extends Component {
             );
         }
     }
-
 }
 
 export default Order
