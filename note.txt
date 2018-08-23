@@ -1,0 +1,5 @@
+cd my-orders-app
+
+sudo npm install
+
+npm start

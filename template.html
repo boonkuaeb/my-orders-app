@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="portlet light bordered" id="box-4">
+                <div class="portlet-title tabbable-line">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a aria-expanded="true" href="#opened_orders" data-toggle="tab"> Opened Orders </a></li>
+                        <li><a aria-expanded="false" href="#order_history" data-toggle="tab"> Order History </a></li>
+                        <li><a aria-expanded="false" href="#trade_history" data-toggle="tab"> Trade History </a></li>
+                    </ul>
+
+                    <div class="checkbox-hide-other-paris">
+                        <label class="mt-checkbox mt-checkbox-outline">
+                            <input type="checkbox"> Hide Other Paris
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="portlet-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="opened_orders">
+
+                        </div>
+                        <div class="tab-pane" id="order_history">
+                            <div class="slimScrollDiv" style="width: auto; height: 250px; overflow: hidden; position: relative;"><div class="scroller" style="width: auto; height: 250px; overflow: hidden;" data-initialized="1">
+                                    order_history       
+                                </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); border-radius: 7px; top: 0px; width: 7px; right: 1px; display: block; position: absolute; z-index: 99; opacity: 0.4;"></div><div class="slimScrollRail" style="background: rgb(234, 234, 234); border-radius: 7px; top: 0px; width: 7px; height: 100%; right: 1px; display: none; position: absolute; z-index: 90; opacity: 0.2;"></div></div>
+                        </div>
+                        <div class="tab-pane" id="trade_history">
+                            <div class="slimScrollDiv" style="width: auto; height: 250px; overflow: hidden; position: relative;"><div class="scroller" style="width: auto; height: 250px; overflow: hidden;" data-initialized="1">
+                                    trade_history    
+                                </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); border-radius: 7px; top: 0px; width: 7px; right: 1px; display: block; position: absolute; z-index: 99; opacity: 0.4;"></div><div class="slimScrollRail" style="background: rgb(234, 234, 234); border-radius: 7px; top: 0px; width: 7px; height: 100%; right: 1px; display: none; position: absolute; z-index: 90; opacity: 0.2;"></div></div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.js"></script>
+        <script>
+              // with es5
+            var React = require('react');
+            var ReactDOM = require('react-dom');
+            var ReactBsTable  = require('react-bootstrap-table');
+            var BootstrapTable = ReactBsTable.BootstrapTable;
+            var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
+
+            var opened_orders = Json.parse('[{"date":"20 Aug 18 07:29 AM","pair":"GTXEUR","type":"BUY","side":"GTXEUR","price":30,"amount":"10","fill_orders":"GTXEUR","total":300,"status":"PENDING"},{"date":"21 Aug 18 06:40 AM","pair":"GTXEUR","type":"","side":"GTXEUR","price":30000000,"amount":"10","fill_orders":"GTXEUR","total":300000000,"status":"PENDING"},{"date":"21 Aug 18 06:41 AM","pair":"GTXEUR","type":"","side":"GTXEUR","price":30000000,"amount":"10","fill_orders":"GTXEUR","total":300000000,"status":"PENDING"},{"date":"21 Aug 18 06:42 AM","pair":"GTXEUR","type":"","side":"GTXEUR","price":30000000,"amount":"10","fill_orders":"GTXEUR","total":300000000,"status":"PENDING"},{"date":"21 Aug 18 06:46 AM","pair":"GTXEUR","type":"","side":"GTXEUR","price":0.3,"amount":"10","fill_orders":"GTXEUR","total":3,"status":"PENDING"},{"date":"21 Aug 18 08:06 AM","pair":"GTXEUR","type":"","side":"GTXEUR","price":0.3,"amount":"10","fill_orders":"GTXEUR","total":3,"status":"PENDING"},{"date":"21 Aug 18 02:52 PM","pair":"GTXUSD","type":"BUY","side":"GTXUSD","price":0.355,"amount":"11","fill_orders":"GTXUSD","total":3.905,"status":"PENDING"},{"date":"21 Aug 18 03:02 PM","pair":"GTXEUR","type":"BUY","side":"GTXEUR","price":0.351,"amount":"26","fill_orders":"GTXEUR","total":9.126,"status":"PENDING"},{"date":"22 Aug 18 08:37 AM","pair":"GTXEUR","type":"BUY","side":"GTXEUR","price":0.35,"amount":"100","fill_orders":"GTXEUR","total":35,"status":"PENDING"},{"date":"22 Aug 18 08:39 AM","pair":"GTXEUR","type":"BUY","side":"GTXEUR","price":0.35,"amount":"100","fill_orders":"GTXEUR","total":35,"status":"PENDING"}]');
+            ReactDOM.render(
+                                <BootstrapTable data={opened_orders} striped={true} hover={true}>
+                                <TableHeaderColumn dataField="date">Pair</TableHeaderColumn>
+                                <TableHeaderColumn dataField="pair">Pair</TableHeaderColumn>
+                                <TableHeaderColumn dataField="type">Type</TableHeaderColumn>
+                        <TableHeaderColumn dataField="side">Side</TableHeaderColumn>
+                            <TableHeaderColumn dataField="price" dataFormat={priceFormatter}>Price</TableHeaderColumn>
+                            <TableHeaderColumn dataField="amount">Amount</TableHeaderColumn>
+                            <TableHeaderColumn dataField="fill_orders">Filled Orders</TableHeaderColumn>
+                                <TableHeaderColumn dataField="total" dataFormat={priceFormatter}>Total</TableHeaderColumn>
+                                </BootstrapTable>,
+                    document.getElementById("opened_orders")
+                    );
+        </script>
+    </body>
+</html>        

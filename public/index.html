@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <title>React App</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div class="container">
+
+      <div class="portlet light bordered" id="box-4">
+        <div class="portlet-title tabbable-line">
+          <ul class="nav nav-tabs">
+            <li class="active"><a aria-expanded="true" href="#opened_orders" data-toggle="tab"> Opened Orders </a></li>
+            <li><a aria-expanded="false" href="#order_history" data-toggle="tab"> Order History </a></li>
+            <li><a aria-expanded="false" href="#trade_history" data-toggle="tab"> Trade History </a></li>
+          </ul>
+
+          <div class="checkbox-hide-other-paris">
+            <label class="mt-checkbox mt-checkbox-outline">
+              <input type="checkbox"> Hide Other Paris
+              <span></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="portlet-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="opened_orders">
+              <div id="root"></div>
+            </div>
+            <div class="tab-pane" id="order_history">
+              <div class="slimScrollDiv" style="width: auto; height: 250px; overflow: hidden; position: relative;"><div class="scroller" style="width: auto; height: 250px; overflow: hidden;" data-initialized="1">
+                order_history
+              </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); border-radius: 7px; top: 0px; width: 7px; right: 1px; display: block; position: absolute; z-index: 99; opacity: 0.4;"></div><div class="slimScrollRail" style="background: rgb(234, 234, 234); border-radius: 7px; top: 0px; width: 7px; height: 100%; right: 1px; display: none; position: absolute; z-index: 90; opacity: 0.2;"></div></div>
+            </div>
+            <div class="tab-pane" id="trade_history">
+              <div class="slimScrollDiv" style="width: auto; height: 250px; overflow: hidden; position: relative;"><div class="scroller" style="width: auto; height: 250px; overflow: hidden;" data-initialized="1">
+                trade_history
+              </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); border-radius: 7px; top: 0px; width: 7px; right: 1px; display: block; position: absolute; z-index: 99; opacity: 0.4;"></div><div class="slimScrollRail" style="background: rgb(234, 234, 234); border-radius: 7px; top: 0px; width: 7px; height: 100%; right: 1px; display: none; position: absolute; z-index: 90; opacity: 0.2;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
