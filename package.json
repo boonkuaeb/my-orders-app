@@ -1,5 +1,6 @@
 {
   "name": "my-orders-app",
+  "homepage": "http://txcore.bk.dev.ipo-servers.net/order-data",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

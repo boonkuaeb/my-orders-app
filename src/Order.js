@@ -14,7 +14,7 @@ class Order extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/api/order-data.json")
+        fetch("./order-data.json")
             .then(res => res.json())
             .then(
                 (result) => {
